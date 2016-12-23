@@ -4,9 +4,10 @@ final class Employee {
 	final private Integer eage;
 	final private Address eaddress;
 	
-	private Address getEaddress() {
+	public Address getEaddress() {
 		Address add = new Address(eaddress.getStreet(),eaddress.getCity(),eaddress.getPincode());
 		return add;
+//		return eaddress;
 	}
 	public String getEname() {
 		return ename;
