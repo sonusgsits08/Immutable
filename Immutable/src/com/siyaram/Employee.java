@@ -1,37 +1,27 @@
 package com.siyaram;
 final class Employee {
-	private String ename;
-	private Integer eage;
-	private Address eaddress;
+	final private String ename;
+	final private Integer eage;
+	final private Address eaddress;
 	
 	private Address getEaddress() {
-		return eaddress;
+		Address add = new Address(eaddress.getStreet(),eaddress.getCity(),eaddress.getPincode());
+		return add;
 	}
-
-	private void setEaddress(Address eaddress) {
-		this.eaddress = eaddress;
+	public String getEname() {
+		return ename;
+	}
+	public Integer getEage() {
+		return eage;
 	}
 
 	Employee(String ename,Integer eage,Address eaddress){
 		this.ename=ename;
 		this.eage=eage;
-		this.eaddress=eaddress;
+		this.eaddress= new Address(eaddress.getStreet(),eaddress.getPincode(),eaddress.getCity());
 	}
-	
 	@Override
 	public String toString() {
-		return "Employee name:"+ename+" age:"+eage+" Address:"+eaddress;
+		return "[ Employee name:"+ename+" age:"+eage+" Address:"+eaddress+" ]";
 	}
-//	private void setEaddress(Address eaddress) {
-//		this.eaddress = eaddress;
-//	}
-//	private String getEname() {
-//		return ename;
-//	}
-//	private Integer getEage() {
-//		return eage;
-//	}
-//	private Address getEaddress() {
-//		return eaddress;
-//	}
 }
